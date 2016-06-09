@@ -1,4 +1,6 @@
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Webshop.Models;
 
 namespace Webshop.Migrations
 {
@@ -30,6 +32,10 @@ namespace Webshop.Migrations
             //    );
             //
             
+
+            //Adds Admin status to specified user.
+            //var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            //UserManager.AddToRole("6ad6fcb8-106a-46dc-b5f2-afa6d966d0f8", "Admin");
         }
     }
 }
