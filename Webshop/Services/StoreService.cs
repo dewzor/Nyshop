@@ -36,7 +36,13 @@ namespace Webshop.Services
         {
             return await _db.Products.Include("Category")
                 .Where(p => p.ProductId == id).SingleOrDefaultAsync();
-        } 
+        }
+
+        public async Task<Product> GetProductByNameAsync(string name) //Needs some work.
+        {
+            return await _db.Products.Include("Category")
+                .Where(p => p.Name == name).SingleOrDefaultAsync();
+        }
 
     }
 }
