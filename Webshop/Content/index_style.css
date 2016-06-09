@@ -1,0 +1,251 @@
+﻿body {
+    font-family: 'Roboto Condensed', sans-serif;
+    width: 100%;
+}
+
+*{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+navbar{
+    margin-top: 200px;
+    padding-top: 200px;
+}
+
+.nav-header .navbar-brand#logo {
+    margin-top: 30px;
+}
+
+.navbar-nav li a {
+ line-height: 50px;
+}
+
+.navbar {
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+}
+
+#footer {
+    background-color: #2D2D2D;
+    height: auto;
+    color: #fff;
+}
+
+#footer ul{
+    margin-top: 30px;
+    list-style: none;
+}
+
+
+.splitter{
+    height:20px;
+    background-color: #2D2D2D;
+}
+
+
+.previews{
+    margin-top: 100px;
+}
+.previews div{
+    height: 200px;
+    width: 200px;
+    position: relative;
+}
+
+
+.navbar .brand, .navbar .nav > li > a:hover {
+    color:#2D2D2D;
+}
+
+.jumbotron{
+    height: 200px;
+    background: url('/Images/mountain.png') center center no-repeat;
+    text-align: center;
+    margin-bottom: 0;
+    box-shadow:inset 5px 0px 10px 2px black;
+}
+
+.jumbotron h1{
+    font-size: 40px;
+    color:#ff7b00;
+    margin-top:5px;
+}
+
+.jumbotron p{
+    color:#fff;
+}
+
+#adress{
+    font-weight: bold;
+    font-size: 17px;
+    color:#ff7b00 ;
+}
+
+#adress span{
+    color: #fff;
+}
+
+#phone{
+    font-style: italic; 
+}
+
+#phone span{
+    color: #fff;
+}
+
+#mail{
+     font-style: italic;
+}
+
+#mail span{
+    color: #fff;
+}
+
+#left-footer ul li{
+    margin-top: 10px;
+     display: block;
+
+}
+
+#right-footer ul li{
+    height: 40px;
+    display: inline;
+    margin-right: 5px;
+}
+
+#right-footer ul li img{
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+span{
+    margin-right: 5px;
+}
+
+h2{
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: center;
+    margin-top:7%;
+}
+
+
+h3{
+    text-align: center;
+    margin-top: 0px;
+}
+
+
+hr.fancy-line { 
+    border: 0; 
+    height: 1px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+}
+hr.fancy-line:before {
+    top: -0.5em;
+    height: 1em;
+}
+hr.fancy-line:after {
+    content:'';
+    height: 0.5em;
+    top: 1px;
+}
+
+hr.fancy-line, hr.fancy-line:before {
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+}
+
+body, hr.fancy-line:after {
+    background: #f4f4f4;
+}
+
+#products img{
+    width: 260px;
+    height: 200px;
+    padding: 5px 5px;
+}
+
+.feautured btn{
+    float: right;
+}
+
+
+.btn-danger {
+    border-color: #b2470e;
+    background-color: #DD5E16;
+}
+
+.btn-danger:hover { border-color: #DD5E16; background-color: #b2470e; }
+
+
+.test div{
+    height: 240px;
+    padding: 20px 20px;
+}
+
+.test .top-grid{
+    height: 80px;
+}
+.test .top-grid h4{
+    font-size: 40px;
+}
+
+.test div h5{
+    padding: 20px 20px;
+    font-size: 24px;
+}
+
+.test div p{
+    padding-bottom: 20px;
+}
+
+.t1{
+    border-right: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+
+}
+.t2{
+    border-bottom: 1px solid #EEEEEE;
+}
+.t3{
+    border-right: 1px solid #EEEEEE;
+}
+
+.t4{
+    border-right: 1px solid #EEEEEE;
+}
+
+.t5{
+    border-right: 1px solid #EEEEEE;
+}
+
+#date{
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 7%;
+}
+
+
+@media screen and (max-width: 989px) {
+   
+
+
+    .t1{
+    border-right: none;
+    }
+   
+    .t3{
+    border-right: none;
+    }
+
+    .t4{
+    border-right: none;
+    }
+
+    .t5{
+     border-right: none;
+    }
+}

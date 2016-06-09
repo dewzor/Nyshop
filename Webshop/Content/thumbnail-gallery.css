@@ -1,0 +1,20 @@
+.new-products{
+    margin-top: 50px;
+    text-align:center;
+}
+
+.new-products h1,h2{
+    font-size: 30px;
+}
+.new-products img{
+    height: 200px;
+    width: 200px;
+    transition-property: -moz-filter, -ms-filter, -o-filter, -webkit-filter, filter;
+    transition-duration: 0.5s;
+}
+
+.new-products img:hover{
+   -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+    cursor: pointer;
+}
