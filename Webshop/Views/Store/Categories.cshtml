@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Webshop.Models.Category>
+    
+@{
+    
+    ViewBag.Title = "Categories";
+}
+
+<ul class="list group">
+    @foreach (var category in Model)
+    {
+        <li class="list-grup-item"> @Html.ActionLink(category.Name, "Browse", new { id = category.Name })</li>
+    }
+</ul>
