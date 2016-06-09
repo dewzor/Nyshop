@@ -217,6 +217,10 @@
     <Compile Include="Migrations\201606091554032_contextmerge.Designer.cs">
       <DependentUpon>201606091554032_contextmerge.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606091728514_IdentityModel.cs" />
+    <Compile Include="Migrations\201606091728514_IdentityModel.Designer.cs">
+      <DependentUpon>201606091728514_IdentityModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CartItem.cs" />
@@ -358,6 +362,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606091554032_contextmerge.resx">
       <DependentUpon>201606091554032_contextmerge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606091728514_IdentityModel.resx">
+      <DependentUpon>201606091728514_IdentityModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
