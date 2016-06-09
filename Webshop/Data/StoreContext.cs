@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Webshop.Models;
 
 namespace Webshop.Data
 {
     
-    public class StoreContext : DbContext
+    public class StoreContext : IdentityDbContext<ApplicationUser> //DbContext
     {
         
         public StoreContext() : base("Webshop") { }
@@ -19,7 +20,11 @@ namespace Webshop.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
 
+        public static StoreContext Create()
+        {
+            return new StoreContext();
+        }
     }
-            
-    
+
+
 }

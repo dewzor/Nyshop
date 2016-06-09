@@ -148,13 +148,13 @@ namespace Webshop.Services
 
     private string GetCartId(HttpContextBase http)
         {
-            var cookie = http.Request.Cookies.Get("ShoppingCart");
+            var cookie = http.Request.Cookies.Get("ShoppingCart"); // Looks if httpcontextbase holds a cookie called ShoppingCart
             var cartId = string.Empty;
 
-            if (cookie == null || string.IsNullOrWhiteSpace(cookie.Value))
+            if (cookie == null || string.IsNullOrWhiteSpace(cookie.Value)) // If ShoppingCart cookie does not exist, this creates one.
             {
                 cookie = new HttpCookie("ShoppingCart");
-                cartId = Guid.NewGuid().ToString();
+                cartId = Guid.NewGuid().ToString(); // Is a globally unique identifyer
 
                 cookie.Value = cartId;
                 cookie.Expires = DateTime.Now.AddDays(7);
