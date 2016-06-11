@@ -44,5 +44,10 @@ namespace Webshop.Services
                 .Where(p => p.Name == name).SingleOrDefaultAsync();
         }
 
+        public async Task<IEnumerable<Product>> GetAllProducts()
+        {
+            return await _db.Products.OrderBy(c => c.Name).ToArrayAsync(); ;
+        }
+
     }
 }

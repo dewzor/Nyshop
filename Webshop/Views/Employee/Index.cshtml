@@ -1,17 +1,12 @@
-﻿
+﻿@model IEnumerable<Webshop.Models.Category>
+
 @{
-    Layout = null;
+    ViewBag.Title = "Categories";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> 
-    </div>
-</body>
-</html>
+    @Html.DropDownList("Dropdown", (SelectList) ViewBag.Products)
+
+
+@Html.DropDownList("CompanyName",
+                       new SelectList(Model.Select(i => i.Name).Distinct().ToList()))

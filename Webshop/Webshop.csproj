@@ -200,6 +200,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminMenuController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -222,6 +223,10 @@
     <Compile Include="Migrations\201606091728514_IdentityModel.Designer.cs">
       <DependentUpon>201606091728514_IdentityModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606111614545_PublishProduct.cs" />
+    <Compile Include="Migrations\201606111614545_PublishProduct.Designer.cs">
+      <DependentUpon>201606111614545_PublishProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CartItem.cs" />
@@ -234,7 +239,6 @@
     <Compile Include="Models\Store.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BtreeGateway.cs" />
-    <Compile Include="Services\EmployeeService.cs" />
     <Compile Include="Services\IGateway.cs" />
     <Compile Include="Services\PaymentResult.cs" />
     <Compile Include="Services\ShoppingCart.cs" />
@@ -352,6 +356,8 @@
     <Content Include="Views\Store\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Employee\AddProduct.cshtml" />
+    <Content Include="Views\Shared\AdminMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -370,6 +376,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606091728514_IdentityModel.resx">
       <DependentUpon>201606091728514_IdentityModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606111614545_PublishProduct.resx">
+      <DependentUpon>201606111614545_PublishProduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
