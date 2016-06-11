@@ -10,17 +10,22 @@ namespace Webshop.Controllers
 {
     public class EmployeeController : Controller
     {
-        private readonly EmployeeService _store;
-        public EmployeeController() : this(new EmployeeService()) { }
-        public EmployeeController(EmployeeService service)
+        private StoreService _store;
+        public EmployeeController() : this(new StoreService()) { }
+        public EmployeeController(StoreService service)
         {
             _store = service;
         }
         // GET: Employee
+        [Authorize(Roles = "Admin, Employee")]
         public async Task<ActionResult> Index()
         {
             var categories = await _store.GetCategoriesAsync();
+            var products = await _store.GetAllProducts();
+            ViewBag.Products = new SelectList(products.Select(i => i.Name).Distinct().ToList());
             return View(categories);
         }
+
+
     }
 }
