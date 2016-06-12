@@ -5,6 +5,7 @@
 
 *{
     font-family: 'Roboto Condensed', sans-serif;
+    border-radius: 0 !important;
 }
 
 navbar{
@@ -20,16 +21,13 @@ navbar{
  line-height: 50px;
 }
 
-.navbar {
-    -webkit-box-shadow: 0 8px 6px -6px #999;
-    -moz-box-shadow: 0 8px 6px -6px #999;
-    box-shadow: 0 8px 6px -6px #999;
-}
+ul.nav a:hover { color: #000 !important; }
 
 #footer {
     background-color: #2D2D2D;
     height: auto;
     color: #fff;
+    margin-bottom: 0px;
 }
 
 #footer ul{
@@ -66,10 +64,10 @@ navbar{
     box-shadow:inset 5px 0px 10px 2px black;
 }
 
-.jumbotron h1{
+.jumbotron h2{
     font-size: 40px;
-    color:#ff7b00;
-    margin-top:5px;
+    color:#fff;
+    margin-top:-20px;
 }
 
 .jumbotron p{
@@ -102,19 +100,14 @@ navbar{
     color: #fff;
 }
 
-#left-footer ul li{
-    margin-top: 10px;
-     display: block;
-
-}
-
-#right-footer ul li{
+#footer  ul li{
     height: 40px;
     display: inline;
-    margin-right: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
-#right-footer ul li img{
+#footer ul li img{
     height: 30px;
     margin-bottom: 20px;
 }
@@ -127,7 +120,6 @@ h2{
     font-size: 40px;
     font-weight: bolder;
     text-align: center;
-    margin-top:7%;
 }
 
 
@@ -168,18 +160,17 @@ body, hr.fancy-line:after {
     padding: 5px 5px;
 }
 
-.feautured btn{
-    float: right;
+
+
+.btn-danger, .btn-danger:active, .btn-danger:visited {
+    background-color: #ff7b00 !important;
+    border-color: #fff;
+    border: none;
 }
 
-
-.btn-danger {
-    border-color: #b2470e;
-    background-color: #DD5E16;
+.btn-danger:hover{
+    background-color: #ffa556 !important;
 }
-
-.btn-danger:hover { border-color: #DD5E16; background-color: #b2470e; }
-
 
 .test div{
     height: 240px;
@@ -227,6 +218,67 @@ body, hr.fancy-line:after {
     text-align: center;
     margin-bottom: 7%;
 }
+
+input[type="text"]
+{
+    background-color:rgba(255, 123, 0, 0.6);
+    border: none;
+    color: #fff;
+    height: 34px;
+    width: 180px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+.img-cards div{
+    background-size: cover;
+    height: 200px;
+}
+
+
+#pic1{
+    background-image: url(../Images/men1.jpg);
+}
+
+#pic2{
+    background-image: url(../Images/men2.jpg);
+}
+
+
+#pic3{
+    background-image: url(../Images/men3.jpg);
+}
+
+
+#pic4{
+    background-image: url(../Images/men4.jpg);
+}
+
+
+#pic5{
+    background-image: url(../Images/women1.jpg);
+}
+
+
+#pic6{
+    background-image: url(../Images/women2.jpg);
+}
+
+
+#pic7{
+    background-image: url(../Images/women3.jpg);
+}
+
+#pic8{
+    background-image: url(../Images/women4.jpg);
+}
+
+.sale-info h6{
+    font-size: 24px;
+    text-align: center;
+}
+
 
 
 @media screen and (max-width: 989px) {

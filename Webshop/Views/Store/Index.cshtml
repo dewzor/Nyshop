@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<Webshop.Models.Category>
-    
+
 @{
     ViewBag.Title = "Index";
 
@@ -11,19 +11,20 @@
 
 <div class="jumbotron">
 
-    <h1>Built using Swedish technology</h1>
-    <p> - Guaranteed success - </p>
+    <h2>Join our mail list</h2>
+    <p>- Get the latest news! - </p>
+    <form>
+        <input type="text" />
+        <button type="button" class="btn btn-info">Send</button>
+    </form>
 
 </div>
 
-
-
-<div class="container feautured ">
+<div class="container feautured">
     <div class="row" id="products">
         <h2>Feautured Products</h2>
         <p id="date">Updated 2016-06-02</p>
-        <hr class="fancy-line row" />
-        <div class="col-sm-4 col-md-2">
+        <div class="col-sm-4 col-md-4">
             <div class="thumbnail">
                 <img src="~/Images/products/shirt1.jpg" alt="...">
                 <div class="caption">
@@ -33,7 +34,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-4 col-md-2">
+        <div class="col-sm-4 col-md-4">
             <div class="thumbnail">
                 <img src="~/Images/products/shoes1.jpg" alt="...">
                 <div class="caption">
@@ -43,7 +44,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-4 col-md-2">
+        <div class="col-sm-4 col-md-4">
             <div class="thumbnail">
                 <img src="~/Images/products/shoes2.jpg" alt="...">
                 <div class="caption">
@@ -53,7 +54,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-4 col-md-2">
+        <div class="col-sm-4 col-md-4">
             <div class="thumbnail">
                 <img src="~/Images/products/shoes3.jpg" alt="...">
                 <div class="caption">
@@ -63,7 +64,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-4 col-md-2">
+        <div class="col-sm-4 col-md-4">
             <div class="thumbnail">
                 <img src="~/Images/products/watch.jpg" alt="...">
                 <div class="caption">
@@ -73,7 +74,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-4 col-md-2">
+        <div class="col-sm-4 col-md-4">
             <div class="thumbnail">
                 <img src="~/Images/products/watch1.gif" alt="...">
                 <div class="caption">
@@ -88,7 +89,7 @@
 
 <hr class="fancy-line row" />
 
-<div class="container test">
+<div class="container r-bars">
     <div class="col-md-12 top-grid">
         <h4>Why you should chose our store...</h4>
     </div>
@@ -119,11 +120,40 @@
     </div>
 </div>
 
-    @*originalkoden*@
+<hr class="fancy-line row" />
 
-    <ul class="list group">
-        @foreach (var category in Model)
-        {
+<div class="img-cards container">
+
+    <div class="row">
+        <div id="pic1" class="hvr-shrink col-md-3 col-sm-3"></div>
+        <div id="pic2" class="hvr-shrink col-md-3 col-sm-3"></div>
+        <div id="pic3" class="hvr-shrink col-md-3 col-sm-3"></div>
+        <div id="pic4" class="hvr-shrink col-md-3 col-sm-3"></div>
+    </div>
+
+    <div class="row">
+        <div id="pic5" class="hvr-shrink col-md-3 col-sm-3"></div>
+        <div id="pic6" class="hvr-shrink col-md-3 col-sm-3"></div>
+        <div id="pic7" class="hvr-shrink col-md-3 col-sm-3"></div>
+        <div id="pic8" class="hvr-shrink col-md-3 col-sm-3"></div>
+    </div>
+
+
+</div>
+
+<hr class="fancy-line row" />
+
+<div class="sale-info">
+    <h6>Sales are increasing...</h6>
+    <p>With over 6000 orders the first month, we at Traders.net have confidence that we can make this service even better. Improvement is the key to success and our engineers are working everyday to improve every aspect of this site. </p>
+</div>
+<hr class="fancy-line row" />
+
+@*originalkoden*@
+
+<ul class="list group">
+    @foreach (var category in Model)
+    {
         <li class="list-grup-item"> @Html.ActionLink(category.Name, "Browse", new { id = category.Name })</li>
-        }
-    </ul>
+    }
+</ul>
