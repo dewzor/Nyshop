@@ -273,6 +273,10 @@
     <Content Include="Images\jumbotron.png" />
     <Content Include="Images\leaves.jpg" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\men1.jpg" />
+    <Content Include="Images\men2.jpg" />
+    <Content Include="Images\men3.jpg" />
+    <Content Include="Images\men4.jpg" />
     <Content Include="Images\mountain.jpg" />
     <Content Include="Images\mountain.png" />
     <Content Include="Images\products\shirt1.jpg" />
@@ -284,6 +288,10 @@
     <Content Include="Images\social-google-plus-square-button.png" />
     <Content Include="Images\twitter-logo-on-black-background.png" />
     <Content Include="Images\winter.jpg" />
+    <Content Include="Images\women1.jpg" />
+    <Content Include="Images\women2.jpg" />
+    <Content Include="Images\women3.jpg" />
+    <Content Include="Images\women4.jpg" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="ApplicationInsights.config">
