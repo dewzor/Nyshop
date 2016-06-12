@@ -155,8 +155,8 @@ body, hr.fancy-line:after {
 }
 
 #products img{
-    width: 260px;
-    height: 200px;
+    width: 300px;
+    height: 260px;
     padding: 5px 5px;
 }
 
@@ -172,24 +172,24 @@ body, hr.fancy-line:after {
     background-color: #ffa556 !important;
 }
 
-.test div{
-    height: 240px;
+.r-bars div{
     padding: 20px 20px;
 }
 
-.test .top-grid{
-    height: 80px;
+.r-bars.top-grid{
+    height: 30px;
+    background-color: red;
 }
-.test .top-grid h4{
-    font-size: 40px;
+.r-bars .top-grid h4{
+    font-size: 30px;
 }
 
-.test div h5{
+.r-bars div h5{
     padding: 20px 20px;
     font-size: 24px;
 }
 
-.test div p{
+.r-bars div p{
     padding-bottom: 20px;
 }
 
