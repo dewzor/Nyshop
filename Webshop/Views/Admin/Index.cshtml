@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Webshop.Models.Category>
+
+@{
+    ViewBag.Title = "Categories";
+}
+
+
+@Html.DropDownList("Dropdown", (SelectList)ViewBag.Products)
+
+
+@Html.DropDownList("CompanyName",
+                       new SelectList(Model.Select(i => i.Name).Distinct().ToList()))

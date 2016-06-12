@@ -50,12 +50,19 @@
             </div>
             <div>
                 <ul class="nav navbar-nav navbar-right">
+                    @Html.Partial("_LoginPartial")
                     <li>@Html.ActionLink("Home", "Index", "Store")</li>
                     <li>@Html.ActionLink("Categories", "Categories", "Store")</li>
                     <li><a href="#">Policy</a></li>
                     <li>@Html.ActionLink("Shopping Cart", "Index", "ShoppingCart")</li>
+
+                    @if (User.IsInRole("Admin") || User.IsInRole("Employee"))
+                    {
+                        @Html.Action("AdminMenu", "AdminMenu")
+                    }
+                    
                 </ul>
-                @Html.Partial("_LoginPartial")
+                
                 
             </div>
         </div>

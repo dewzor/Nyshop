@@ -200,6 +200,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminMenuController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -356,12 +357,14 @@
     <Content Include="Views\Store\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
-    <Content Include="Views\Employee\AddProduct.cshtml" />
+    <Content Include="Views\Admin\AddProduct.cshtml" />
     <Content Include="Views\Shared\AdminMenu.cshtml" />
+    <Content Include="Views\Shared\EmployeeMenu.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Employee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
