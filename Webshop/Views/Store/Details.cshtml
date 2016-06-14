@@ -7,7 +7,7 @@
 <h2>@Model.Name</h2>
 
 <p>
-    <img alt="@Model.Name" src="@Url.Content(Model.ImageUrl)"/>
+    <img class="product-image" alt="@Model.Name" src="@Url.Content(Model.ImageUrl)"/>
 </p>
 
 <div id="category-details">
@@ -19,7 +19,18 @@
         <em>Price:</em>
         @Html.DisplayFor(m => m.Price)
     </p>
-    <p class="button">
-        @Html.ActionLink("Add to cart", "AddtoCart", new {controller = "ShoppingCart", id=Model.ProductId})
+    <p>
+        <em>Description:</em>
+        @Html.DisplayFor(m => m.Description)
     </p>
+    <p class="button">
+        @Html.ActionLink("Add to cart", "AddtoCart", new {controller = "ShoppingCart", id = Model.ProductId})
+    </p>
+    @if (User.IsInRole("Admin") || User.IsInRole("Employee"))
+    {
+    <p>
+        @Html.ActionLink("Edit product", "EditProduct", new { controller = "Admin", id = Model.ProductId })
+     </p>
+        }
+   
 </div>

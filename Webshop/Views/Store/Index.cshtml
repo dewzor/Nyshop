@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Webshop.Models.Category>
+﻿@model IEnumerable<Webshop.Models.Product>
 
 @{
     ViewBag.Title = "Index";
@@ -24,7 +24,21 @@
     <div class="row" id="products">
         <h2>Feautured Products</h2>
         <p id="date">Updated 2016-06-02</p>
+
+        @foreach(var product in Model) {
         <div class="col-sm-4 col-md-4">
+            <div class="thumbnail">
+                <img src="@Url.Content(product.ImageUrl)" alt="@product.Name">
+                <div class="caption">
+                    <h3>@product.Name</h3>
+                    <p>@product.Description</p>
+                    <p><a href="@Url.Action("Details", new {id = product.ProductId})" class="btn btn-danger center-block" role="button"><span class="glyphicon glyphicon-shopping-cart"></span> Buy</a></p>
+                </div>
+            </div>
+        </div>
+        }
+
+        @*<div class="col-sm-4 col-md-4">
             <div class="thumbnail">
                 <img src="~/Images/products/shirt1.jpg" alt="...">
                 <div class="caption">
@@ -83,7 +97,7 @@
                     <p><a href="#" class="btn btn-danger center-block" role="button"><span class="glyphicon glyphicon-shopping-cart"></span> Buy</a></p>
                 </div>
             </div>
-        </div>
+        </div>*@
     </div>
 </div>
 
@@ -151,9 +165,9 @@
 
 @*originalkoden*@
 
-<ul class="list group">
-    @foreach (var category in Model)
-    {
-        <li class="list-grup-item"> @Html.ActionLink(category.Name, "Browse", new { id = category.Name })</li>
-    }
-</ul>
+@*<ul class="list group">
+        @foreach (var category in Model)
+        {
+            <li class="list-grup-item"> @Html.ActionLink(category.Name, "Browse", new { id = category.Name })</li>
+        }
+    </ul>*@

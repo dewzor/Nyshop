@@ -19,8 +19,8 @@ namespace Webshop.Controllers
         // GET: Store
         public async Task<ActionResult> Index()
         {
-            var categories = await _store.GetCategoriesAsync();
-            return View(categories);
+            var products = await _store.GetAllProducts();
+            return View(products);
         }
 
         public async Task<ActionResult> Browse(string id)

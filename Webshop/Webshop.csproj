@@ -202,7 +202,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminMenuController.cs" />
-    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\FormController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
@@ -227,6 +227,10 @@
     <Compile Include="Migrations\201606111614545_PublishProduct.cs" />
     <Compile Include="Migrations\201606111614545_PublishProduct.Designer.cs">
       <DependentUpon>201606111614545_PublishProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606142303490_ProductCategoryName.cs" />
+    <Compile Include="Migrations\201606142303490_ProductCategoryName.Designer.cs">
+      <DependentUpon>201606142303490_ProductCategoryName.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -364,8 +368,7 @@
     <Content Include="Views\Store\Details.cshtml" />
     <Content Include="Views\Store\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Employee\Index.cshtml" />
-    <Content Include="Views\Admin\AddProduct.cshtml" />
+    <Content Include="Views\Admin\EditProduct.cshtml" />
     <Content Include="Views\Shared\AdminMenu.cshtml" />
     <Content Include="Views\Shared\EmployeeMenu.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
@@ -373,6 +376,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Form\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -390,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606111614545_PublishProduct.resx">
       <DependentUpon>201606111614545_PublishProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606142303490_ProductCategoryName.resx">
+      <DependentUpon>201606142303490_ProductCategoryName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

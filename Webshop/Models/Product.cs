@@ -14,5 +14,6 @@ namespace Webshop.Models
         public string ImageUrl { get; set; }
         public string Description { get; set; }
         public bool Published { get; set; }
+        public string CategoryName { get; set; } //Might not really be needed but its a workaround for now to get EditProduct form working.
     }
 }
