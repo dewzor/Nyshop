@@ -1,0 +1,54 @@
+﻿@model Webshop.Models.Product
+
+@{
+    ViewBag.Title = Model.Name + " Details";
+}
+@if (User.IsInRole("Admin") || User.IsInRole("Employee"))
+{
+<h2>
+    @Model.Name
+</h2>
+
+<p>
+    <img alt="@Model.Name" src="@Url.Content(Model.ImageUrl)"/>
+    <button class="upload-image">Upload new image</button>
+</p>
+using (Html.BeginForm("EditProduct", "Form", FormMethod.Post))
+ {
+     <div class="edit-product">
+         <p class="edit-productname">
+             <em>Product Name:</em>
+             @Html.TextBoxFor(model => model.Name, new {name = "Name"})
+         </p>
+
+         <p>
+             <em>Choose Category:</em>
+             @*@Html.DropDownListFor(model => model.Category, new SelectList(ViewBag.Categories))*@
+             @*@Html.DropDownListFor(model => model.Category, new SelectList(ViewBag.Categories, "CategoryId", "Name"))*@
+             @Html.DropDownList("CategoryName", (SelectList)ViewBag.Categories)
+             or
+             Add a new Category:
+             @Html.TextBox("Newcategory")
+             <button class="add-category">Add Category</button>
+         </p>
+         <p class="edit-price">
+             <em>Price:</em>
+             @Html.TextBoxFor(model => model.Price, new {name = "Price"})
+         </p>
+         <p class="edit-description">
+             <em>Description:</em>
+             @Html.TextAreaFor(model => model.Description, new {name = "Description"})
+         </p>
+         <p>
+             <em>Show product in webstore:</em>
+             @Html.CheckBoxFor(model => model.Published, new {name = "Published"})
+         </p>
+         <p class="button">
+             @Html.ActionLink("Add to cart", "AddtoCart", new {controller = "ShoppingCart", id = Model.ProductId})
+         </p>
+
+
+     </div>
+     <input type="submit" value="Update Product"/>
+ }
+}

@@ -7,6 +7,6 @@ namespace Webshop.Models
 {
     public class Store
     {
-
+        
     }
 }

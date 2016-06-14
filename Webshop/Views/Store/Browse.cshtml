@@ -17,7 +17,7 @@
         {
             <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 container">
                 <a href="@Url.Action("Details", new {id = product.ProductId})">
-                    <img alt="@product.Name" src="@Url.Content(product.ImageUrl)"/>
+                    <img class="product-image" alt="@product.Name" src="@Url.Content(product.ImageUrl)"/>
                     <h5 class="control-label"> @product.Name</h5>
                 </a>
             </li>

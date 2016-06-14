@@ -300,3 +300,17 @@ input[type="text"]
      border-right: none;
     }
 }
+
+
+
+/*Lägger input till andra sidor men kanske inte skall vara här */
+
+.edit-description textarea {
+    width: 500px;
+    height: 100px;
+}
+
+.product-image { /* Very temporary size for product images in category list*/
+    width: 200px;
+    height: 200px;
+}
