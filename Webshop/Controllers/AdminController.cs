@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Webshop.Models;
 using Webshop.Services;
 
 namespace Webshop.Controllers
@@ -39,11 +40,19 @@ namespace Webshop.Controllers
             var product = await _store.GetProductByIDAsync(id.Value);
             if (product == null)
                 return HttpNotFound();
+            EditProduct editproduct = new EditProduct();
+            editproduct.Name = product.Name;
+            editproduct.Description = product.Description;
+            editproduct.Published = product.Published;
+            editproduct.CategoryName = product.CategoryName;
+            editproduct.Price = product.Price;
+            editproduct.ImageUrl = product.ImageUrl;
+            
+
             var categories = await _store.GetCategoriesAsync();
             ViewBag.Categories = new SelectList(categories.Select(i => i.Name).Distinct().ToList());
-            //ViewBag.Categories = await _store.GetCategoriesAsync();
-
-            return View(product);
+            
+            return View(editproduct);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model Webshop.Models.Product
+﻿@model Webshop.Models.EditProduct
 
 @{
     ViewBag.Title = Model.Name + " Details";
@@ -8,13 +8,19 @@
 <h2>
     @Model.Name
 </h2>
+    using (Html.BeginForm("UploadImg", "Form", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <p>
+            <img alt="@Model.Name" src="@Url.Content(Model.ImageUrl)"/>
+            <input type="file" name="ProfileImage" id="ProfileImage"/>
+            @*@Html.HiddenFor(model => model.Name)
+            @Html.HiddenFor(model => model.ProductId)*@
+            <input type="submit" value="UploadImg"/>
+        </p>
+    }
 
-<p>
-    <img alt="@Model.Name" src="@Url.Content(Model.ImageUrl)"/>
-    <button class="upload-image">Upload new image</button>
-</p>
-using (Html.BeginForm("EditProduct", "Form", FormMethod.Post))
- {
+    using (Html.BeginForm("EditProduct", "Form", FormMethod.Post))
+    {
      <div class="edit-product">
          <p class="edit-productname">
              <em>Product Name:</em>

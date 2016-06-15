@@ -232,10 +232,15 @@
     <Compile Include="Migrations\201606142303490_ProductCategoryName.Designer.cs">
       <DependentUpon>201606142303490_ProductCategoryName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606151129444_EditProductModel.cs" />
+    <Compile Include="Migrations\201606151129444_EditProductModel.Designer.cs">
+      <DependentUpon>201606151129444_EditProductModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\EditProduct.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Order.cs" />
@@ -397,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606142303490_ProductCategoryName.resx">
       <DependentUpon>201606142303490_ProductCategoryName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606151129444_EditProductModel.resx">
+      <DependentUpon>201606151129444_EditProductModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
