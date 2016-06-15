@@ -32,6 +32,11 @@ namespace Webshop.Migrations
             //    );
             //
             
+            //context.Roles.AddOrUpdate(r => r.Name, 
+            //    new IdentityRole { Name = "Admin"},
+            //    new IdentityRole { Name = "Employee" },
+            //    new IdentityRole { Name = "Customer" }
+            //    );
 
             //Adds Admin status to specified user.
             //var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
