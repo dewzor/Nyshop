@@ -311,6 +311,6 @@ input[type="text"]
 }
 
 .product-image { /* Very temporary size for product images in category list*/
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
 }
