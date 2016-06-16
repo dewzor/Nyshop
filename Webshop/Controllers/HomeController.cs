@@ -28,16 +28,6 @@ namespace Webshop.Controllers
 
             return View();
         }
-
-
-
-
-
-
-
-
-
-
         // GET: REDIRECTEN
         //public async Task<ActionResult> Index()
         //{

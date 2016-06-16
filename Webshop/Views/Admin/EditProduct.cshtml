@@ -13,8 +13,8 @@
         <p>
             <img alt="@Model.Name" src="@Url.Content(Model.ImageUrl)"/>
             <input type="file" name="ProfileImage" id="ProfileImage"/>
-            @*@Html.HiddenFor(model => model.Name)
-            @Html.HiddenFor(model => model.ProductId)*@
+            @Html.HiddenFor(model => model.Name)
+            @Html.HiddenFor(model => model.ProductId)
             <input type="submit" value="UploadImg"/>
         </p>
     }
