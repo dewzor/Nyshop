@@ -49,9 +49,7 @@
              <em>Show product in webstore:</em>
              @Html.CheckBoxFor(model => model.Published, new {name = "Published"})
          </p>
-         <p class="button">
-             @Html.ActionLink("Add to cart", "AddtoCart", new {controller = "ShoppingCart", id = Model.ProductId})
-         </p>
+         @Html.HiddenFor(model => model.ProductId)
 
 
      </div>

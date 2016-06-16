@@ -14,6 +14,7 @@ namespace Webshop.Controllers
 {
     public class FormController : Controller
     {
+        private StoreManager _manage = new StoreManager();
         // GET: Form
         public ActionResult Index()
         {
@@ -21,15 +22,16 @@ namespace Webshop.Controllers
         }
 
         [HttpPost]
-        public void EditProduct(Product product)
+        public ActionResult EditProduct(Product product)
         {
-            var x = product;
+            _manage.UpdateProduct(product);
+            return RedirectToAction("Details", "Store", new { id = product.ProductId });
         }
 
         [HttpPost]
         public ActionResult UploadImg(EditProduct file)  //Skall vara actionresult inte void.
         {
-            StoreManager manage = new StoreManager();
+            
             FormLogic check = new FormLogic();
             var result = check.IsImage(file.ProfileImage); //Checks thats the uploaded file is an image.
             string extension = Path.GetExtension(file.ProfileImage.FileName); //Stores files extension for saving correct filetype.
@@ -41,7 +43,7 @@ namespace Webshop.Controllers
                 
                 file.ProfileImage.SaveAs(path);
                 file.ImageUrl = "~/Images/Products/" + file.ProductId + "/" + file.Name + extension;
-                manage.UpdateProductImage(file);
+                _manage.UpdateProductImage(file);
             }
             
             return RedirectToAction("EditProduct", "Admin", new { id = file.ProductId});

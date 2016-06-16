@@ -32,6 +32,11 @@ namespace Webshop.Services
 
         }
 
+        public Category GetCategoryByIDAsync(int id)
+        {
+            return _db.Categories.Single(x => x.CategoryId == id);
+        }
+
         public async Task<Product> GetProductByIDAsync(int id)
         {
             return await _db.Products.Include("Category")

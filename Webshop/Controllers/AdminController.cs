@@ -52,7 +52,13 @@ namespace Webshop.Controllers
             {
                 foreach (var category in categories)
                 {
-                    list.Add(new SelectListItem() { Text = category.Name, Value = category.CategoryId.ToString() });
+                    if (category.Name == editproduct.Category.Name)
+                    {
+                        list.Add(new SelectListItem()
+                        {Text = category.Name,Value = category.CategoryId.ToString(), Selected = true});
+                    }
+                    else 
+                    list.Add(new SelectListItem(){Text = category.Name, Value = category.CategoryId.ToString()});
                 }
             }
             
