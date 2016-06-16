@@ -40,7 +40,7 @@ namespace Webshop.Controllers
                     Directory.CreateDirectory("~/Images/Products/" + file.ProductId);
                 
                 file.ProfileImage.SaveAs(path);
-                file.ImageUrl = path;
+                file.ImageUrl = "~/Images/Products/" + file.ProductId + "/" + file.Name + extension;
                 manage.UpdateProductImage(file);
             }
             

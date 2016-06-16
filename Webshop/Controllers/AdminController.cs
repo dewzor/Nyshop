@@ -46,8 +46,19 @@ namespace Webshop.Controllers
             EditProduct editproduct = manage.ToEditProduct(product);
             
             var categories = await _store.GetCategoriesAsync();
-            ViewBag.Categories = new SelectList(categories.Select(i => i.Name).Distinct().ToList());
+            //ViewBag.Categories = new SelectList(categories.Select(i => i.Name).Distinct().ToList());
+            var list = new List<SelectListItem>();
+            if (categories != null)
+            {
+                foreach (var category in categories)
+                {
+                    list.Add(new SelectListItem() { Text = category.Name, Value = category.CategoryId.ToString() });
+                }
+            }
             
+            
+            ViewBag.Categories = list;
+
             return View(editproduct);
         }
     }

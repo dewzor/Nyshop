@@ -11,7 +11,7 @@
     using (Html.BeginForm("UploadImg", "Form", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         <p>
-            <img alt="@Model.Name" src="@Url.Content(Model.ImageUrl)"/>
+            <img class="product-image" alt="@Model.Name" src="@Url.Content(Model.ImageUrl)"/>
             <input type="file" name="ProfileImage" id="ProfileImage"/>
             @Html.HiddenFor(model => model.Name)
             @Html.HiddenFor(model => model.ProductId)
@@ -30,8 +30,8 @@
          <p>
              <em>Choose Category:</em>
              @*@Html.DropDownListFor(model => model.Category, new SelectList(ViewBag.Categories))*@
-             @*@Html.DropDownListFor(model => model.Category, new SelectList(ViewBag.Categories, "CategoryId", "Name"))*@
-             @Html.DropDownList("CategoryName", (SelectList)ViewBag.Categories)
+             @Html.DropDownListFor(m => m.Category.CategoryId , (IEnumerable<SelectListItem>)ViewBag.Categories)
+             @*@Html.DropDownList("CategoryName", (SelectList)ViewBag.Categories)*@
              or
              Add a new Category:
              @Html.TextBox("Newcategory")
