@@ -32,7 +32,7 @@ namespace Webshop.Services
 
         }
 
-        public Category GetCategoryByIDAsync(int id)
+        public Category GetCategoryByID(int id)
         {
             return _db.Categories.Single(x => x.CategoryId == id);
         }
