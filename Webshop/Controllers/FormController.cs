@@ -33,20 +33,42 @@ namespace Webshop.Controllers
         {
             
             FormLogic check = new FormLogic();
-            var result = check.IsImage(file.ProfileImage); //Checks thats the uploaded file is an image.
-            string extension = Path.GetExtension(file.ProfileImage.FileName); //Stores files extension for saving correct filetype.
-            if (result && file.ProfileImage.ContentLength < 3000000) //If its an image AND its under 3mb, upload it.
+            var result = check.IsImage(file.ProductImage); //Checks thats the uploaded file is an image.
+            string extension = Path.GetExtension(file.ProductImage.FileName); //Stores files extension for saving correct filetype.
+            if (result && file.ProductImage.ContentLength < 3000000) //If its an image AND its under 3mb, upload it.
             {
                 string path = Server.MapPath("~/Images/Products/" + file.ProductId + "/" + file.Name + extension);
                 if(!Directory.Exists("~/Images/Products/" + file.ProductId + "/"))
                     Directory.CreateDirectory("~/Images/Products/" + file.ProductId);
                 
-                file.ProfileImage.SaveAs(path);
+                file.ProductImage.SaveAs(path);
                 file.ImageUrl = "~/Images/Products/" + file.ProductId + "/" + file.Name + extension;
                 _manage.UpdateProductImage(file);
             }
             
             return RedirectToAction("EditProduct", "Admin", new { id = file.ProductId});
+        }
+        [HttpPost]
+        public ActionResult AddProduct(EditProduct product)
+        {
+            var newproductid = _manage.GetMaxProductId() + 1;
+            //First uploads image.
+            FormLogic check = new FormLogic();
+            var result = check.IsImage(product.ProductImage); //Checks thats the uploaded file is an image.
+            string extension = Path.GetExtension(product.ProductImage.FileName); //Stores files extension for saving correct filetype.
+            if (result && product.ProductImage.ContentLength < 3000000) //If its an image AND its under 3mb, upload it.
+            {
+                string path = Server.MapPath("~/Images/Products/" + newproductid + "/" + product.Name + extension);
+                if (!Directory.Exists("~\\Images\\Products\\" + newproductid+"\\"))
+                    Directory.CreateDirectory("~/Images/Products/" + newproductid);
+
+                product.ProductImage.SaveAs(path);
+                product.ImageUrl = "~/Images/Products/" + newproductid + "/" + product.Name + extension;
+                _manage.UpdateProductImage(product);
+            }
+            _manage.AddProduct(_manage.ToProduct(product));
+            
+            return RedirectToAction("Details", "Store", new { id = newproductid });
         }
     }
 }

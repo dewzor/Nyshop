@@ -67,5 +67,12 @@ namespace Webshop.Controllers
 
             return View(editproduct);
         }
+
+        public async Task<ActionResult> AddProduct()
+        {
+            var categories = await _store.GetCategoriesAsync();
+            ViewBag.Categories = new SelectList(categories.Select(i => i.Name).Distinct().ToList());
+            return View();
+        }
     }
 }

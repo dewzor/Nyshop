@@ -10,3 +10,5 @@
 
 @Html.DropDownList("Categories",
                        new SelectList(Model.Select(i => i.Name).Distinct().ToList()))
+
+@Html.ActionLink("Add Product", "AddProduct", "Admin")
