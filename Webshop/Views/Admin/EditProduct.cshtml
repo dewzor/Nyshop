@@ -1,6 +1,7 @@
 ﻿@model Webshop.Models.EditProduct
 
 @{
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = Model.Name + " Details";
 }
 @if (User.IsInRole("Admin") || User.IsInRole("Employee"))
@@ -19,7 +20,7 @@
         </p>
     }
 
-    using (Html.BeginForm("EditProduct", "Form", FormMethod.Post))
+    using (Html.BeginForm("EditProduct", "Form", FormMethod.Post, new { id= "submitForm"}))
     {
      <div class="edit-product">
          <p class="edit-productname">
@@ -29,13 +30,17 @@
 
          <p>
              <em>Choose Category:</em>
+             @*@Html.DropDownListFor(m => m.Category.CategoryId, (IEnumerable<SelectListItem>)ViewBag.Categories) <-- I used this one before JSON*@
+
              @*@Html.DropDownListFor(model => model.Category, new SelectList(ViewBag.Categories))*@
-             @Html.DropDownListFor(m => m.Category.CategoryId , (IEnumerable<SelectListItem>)ViewBag.Categories)
              @*@Html.DropDownList("CategoryName", (SelectList)ViewBag.Categories)*@
+             @Html.LabelFor(x => x.Category.Name, "Country")
+
+             @Html.DropDownListFor(x => x.Category.CategoryId, new List<SelectListItem>())
              or
              Add a new Category:
              @Html.TextBox("Newcategory")
-             <button class="add-category">Add Category</button>
+             <button id='addcategory'>Add Category</button>
          </p>
          <p class="edit-price">
              <em>Price:</em>
@@ -53,6 +58,10 @@
 
 
      </div>
-     <input type="submit" value="Update Product"/>
- }
+     <input type="submit" value="Submit"/>
+    }
+}
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/categories.js")
 }

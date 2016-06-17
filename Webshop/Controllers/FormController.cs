@@ -29,6 +29,13 @@ namespace Webshop.Controllers
         }
 
         [HttpPost]
+        public ActionResult PostCategory()
+        {
+            //dosomething
+            return null;
+        }
+
+        [HttpPost]
         public ActionResult UploadImg(EditProduct product)  //Skall vara actionresult inte void.
         {
             

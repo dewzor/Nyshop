@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 using Webshop.Data;
 using Webshop.Models;
 using Webshop.Services;
@@ -61,11 +62,26 @@ namespace Webshop.Controllers
                     list.Add(new SelectListItem(){Text = category.Name, Value = category.CategoryId.ToString()});
                 }
             }
-            
-            
             ViewBag.Categories = list;
 
             return View(editproduct);
+        }
+
+        [HttpPost]
+        public JsonResult CategoryList()
+        {
+            // normally, you pass a list obtained from ORM or ADO.NET DataTable or DataReader
+            var categories =  _store.GetCategories();
+            string json = new JavaScriptSerializer().Serialize(categories);
+            //return Json(new Dictionary<string, string>() { { "PH", "Philippines" }, { "CN", "China" }, { "CA", "Canada" }, { "JP", "Japan" } }.ToList());
+            var result = Json(json, JsonRequestBehavior.AllowGet);
+            return result;
+        }
+
+        [HttpPost]
+        public void AddCategory(string jsonData)
+        {
+            
         }
 
         public async Task<ActionResult> AddProduct()
