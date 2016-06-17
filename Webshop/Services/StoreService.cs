@@ -25,6 +25,11 @@ namespace Webshop.Services
             return await _db.Categories.OrderBy(c => c.Name).ToArrayAsync();
         }
 
+        public IEnumerable<Category> GetCategories()
+        {
+            return _db.Categories.OrderBy(c => c.Name).ToArray();
+        }
+
         public async Task<IEnumerable<Product>> GetProductsForAsync(string category)
         {
             return await _db.Products.Include("Category")
