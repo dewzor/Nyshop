@@ -79,9 +79,16 @@ namespace Webshop.Controllers
         }
 
         [HttpPost]
-        public void AddCategory(string jsonData)
+        public JsonResult AddCategory(string jsonData)
         {
-            
+            var hej = jsonData;
+
+
+            var categories = _store.GetCategories();
+            string json = new JavaScriptSerializer().Serialize(categories);
+            //return Json(new Dictionary<string, string>() { { "PH", "Philippines" }, { "CN", "China" }, { "CA", "Canada" }, { "JP", "Japan" } }.ToList());
+            var result = Json(json, JsonRequestBehavior.AllowGet);
+            return result;
         }
 
         public async Task<ActionResult> AddProduct()

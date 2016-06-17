@@ -40,7 +40,7 @@
              or
              Add a new Category:
              @Html.TextBox("Newcategory")
-             <button id='addcategory'>Add Category</button>
+             <input type="button" id='addcategory' value="Add Category"/>
          </p>
          <p class="edit-price">
              <em>Price:</em>
@@ -61,7 +61,55 @@
      <input type="submit" value="Submit"/>
     }
 }
-
 @section Scripts {
-    @Scripts.Render("~/Scripts/categories.js")
+    <script src="@Url.Content("~/Scripts/categories.js")"></script>
 }
+
+@*<script type="text/javascript">
+
+    $(document).ready(function() {
+        alert("BAIZ");
+    });
+
+
+    //function getCategories() {
+    //    $.ajax({
+    //        url: '/Admin/CategoryList/',
+    //        type: 'POST',
+    //        dataType: 'json',
+    //        success: function(data) {
+    //            alert('success');
+    //            var categories = $('#Category_CategoryId');
+
+    //            $.each(JSON.parse(data), function(idx, obj) {
+    //                categories.append($('<option />').val(this.CategoryId).text(this.Name));
+    //                alert(this.Name+" "+this.CategoryId);
+    //            });
+    //        }
+    //    });
+    //};
+
+    
+
+    //$('#addcategory').click(function () {
+    //    alert($("#Newcategory").val());
+    //    var text = $("#Newcategory").val();
+    //    var data = { JSON.stringify(text), };
+    //    $.ajax({
+    //        type: 'post',
+    //        dataType: 'json',
+    //        url: 'Admin\AddCategory',
+    //        data: data,
+    //         contentType: 'application/json', <-- no need this.
+    //        success function(json) {
+    //            if (json) {
+    //                alert('ok');
+    //            } else {
+    //                alert('failed');
+    //            }
+    //        },
+    //    });
+
+    //    $.post("/Journal/SaveEntry", { jsonData: JSONstring });
+    //});
+</script>*@
