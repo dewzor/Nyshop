@@ -1,6 +1,6 @@
 ﻿function getCategories() {
     $.ajax({
-        url: '/Admin/CategoryList/',
+        url: 'Admin/CategoryList/',
         type: 'POST',
         dataType: 'json',
         success: function(data) {
@@ -20,23 +20,24 @@ $(document).ready(function() {
 });
 
 $('#addcategory').click(function () {
+    alert("hej");
+    $.post("localhost/Webshop/admin/addcategory", { jsonData: JSON.stringify(text) });
     //alert($("#Newcategory").val());
-    var text = $("#Newcategory").val();
-    var data = { JSON.stringify(text), };
-    $.ajax({
-        type: 'post',
-        dataType: 'json',
-        url: 'Admin\AddCategory',
-        data: data,
-        // contentType: 'application/json', <-- no need this.
-        success: function(json) {
-            if (json) {
-                alert('ok');
-            } else {
-                alert('failed');
-            }
-        },
-    });
+    //var text = $("#Newcategory").val();
+    //$.ajax({
+    //    type: 'POST',
+    //    dataType: 'json',
+    //    url: 'AddCategory',
+    //    data: JSON.stringify(text),
+    //    // contentType: 'application/json', <-- no need this.
+    //    success: function(json) {
+    //        if (json) {
+    //            alert('ok');
+    //        } else {
+    //            alert('failed');
+    //        }
+    //    },
+    //});
 
-    //$.post("/Journal/SaveEntry", { jsonData: JSONstring });
-    });
+
+});
