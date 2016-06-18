@@ -34,13 +34,13 @@
 
              @*@Html.DropDownListFor(model => model.Category, new SelectList(ViewBag.Categories))*@
              @*@Html.DropDownList("CategoryName", (SelectList)ViewBag.Categories)*@
-             @Html.LabelFor(x => x.Category.Name, "Country")
-
+             @Html.LabelFor(x => x.Category.Name, "Category")
              @Html.DropDownListFor(x => x.Category.CategoryId, new List<SelectListItem>())
              or
              Add a new Category:
              @Html.TextBox("Newcategory")
              <input type="button" id='addcategory' value="Add Category"/>
+             <div class="product-added"></div>
          </p>
          <p class="edit-price">
              <em>Price:</em>
