@@ -14,6 +14,7 @@ namespace Webshop.Controllers
     [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
+        private StoreManager _manage = new StoreManager();
         private StoreService _store;
         public AdminController() : this(new StoreService()) { }
         public AdminController(StoreService service)
@@ -43,8 +44,8 @@ namespace Webshop.Controllers
             if (product == null)
                 return HttpNotFound();
              
-            StoreManager manage = new StoreManager();
-            EditProduct editproduct = manage.ToEditProduct(product);
+            
+            EditProduct editproduct = _manage.ToEditProduct(product);
             
             var categories = await _store.GetCategoriesAsync();
             //ViewBag.Categories = new SelectList(categories.Select(i => i.Name).Distinct().ToList());
@@ -79,16 +80,9 @@ namespace Webshop.Controllers
         }
 
         [HttpPost]
-        public JsonResult AddCategory(string jsonData)
+        public void AddCategory(string jsonData)
         {
-            var hej = jsonData;
-
-
-            var categories = _store.GetCategories();
-            string json = new JavaScriptSerializer().Serialize(categories);
-            //return Json(new Dictionary<string, string>() { { "PH", "Philippines" }, { "CN", "China" }, { "CA", "Canada" }, { "JP", "Japan" } }.ToList());
-            var result = Json(json, JsonRequestBehavior.AllowGet);
-            return result;
+            _manage.AddCategory(jsonData);
         }
 
         public async Task<ActionResult> AddProduct()

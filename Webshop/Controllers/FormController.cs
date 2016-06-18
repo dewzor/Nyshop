@@ -64,24 +64,6 @@ namespace Webshop.Controllers
             
             var newproduct = _manage.AddProduct(_manage.ToProduct(product));
             _manage.SaveProductImage(product, newproduct.ProductId);
-            //Then uploads image.
-            
-            //FormLogic check = new FormLogic();
-            //var result = check.IsImage(product.ProductImage); //Checks thats the uploaded file is an image.
-            //string extension = Path.GetExtension(product.ProductImage.FileName); //Stores files extension for saving correct filetype.
-            //if (result && product.ProductImage.ContentLength < 3000000) //If its an image AND its under 3mb, upload it.
-            //{
-            //    string folderPath = Server.MapPath("~/Images/Products/" + newproductid + "/");
-            //    string path = Path.Combine(folderPath+ product.Name + extension);
-            //    if (!Directory.Exists(folderPath))
-            //        Directory.CreateDirectory(folderPath);
-
-            //    product.ProductImage.SaveAs(path);
-            //    product.ImageUrl = "~/Images/Products/" + newproductid + "/" + product.Name + extension;
-
-            //}
-
-
             return RedirectToAction("Details", "Store", new { id = newproduct.ProductId });
         }
     }
