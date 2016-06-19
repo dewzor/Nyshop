@@ -382,6 +382,7 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Employee.cshtml" />
     <Content Include="Views\Admin\AddProduct.cshtml" />
+    <Content Include="Webshop.bak" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
