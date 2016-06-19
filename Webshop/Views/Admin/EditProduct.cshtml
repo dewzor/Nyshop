@@ -36,7 +36,7 @@
              @*@Html.DropDownList("CategoryName", (SelectList)ViewBag.Categories)*@
              @Html.LabelFor(x => x.Category.Name, "Category")
              @Html.DropDownListFor(x => x.Category.CategoryId, new List<SelectListItem>())
-             or
+             or 
              Add a new Category:
              @Html.TextBox("Newcategory")
              <input type="button" id='addcategory' value="Add Category"/>
