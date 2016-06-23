@@ -267,6 +267,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\hover.css" />
     <Content Include="Content\index_style.css" />
+    <Content Include="Content\register_style.css" />
     <Content Include="Content\sample.png" />
     <Content Include="Content\thumbnail-gallery.css" />
     <Content Include="favicon.ico" />
