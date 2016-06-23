@@ -54,6 +54,10 @@ namespace Webshop.Controllers
             return View(categories);
         }
 
+        public async Task<ActionResult> ReviewProduct()
+        {
+            return View();
+        }
 
     }
 }

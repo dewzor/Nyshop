@@ -1,6 +1,6 @@
 ﻿function getCategories() {
     $.ajax({
-        url: '../CategoryList/',
+        url: '/admin/CategoryList/',
         type: 'POST',
         dataType: 'json',
         success: function(data) {
@@ -19,7 +19,7 @@ $(document).ready(function() {
 
 $('#addcategory').click(function () {
     var text = $("#Newcategory").val();
-    $.post("../addcategory", { jsonData: text }).error(function (data) { });
+    $.post("/admin/addcategory", { jsonData: text }).error(function (data) { });
     $('.product-added').empty();
     setTimeout(function () {
         getCategories();

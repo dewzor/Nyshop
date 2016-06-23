@@ -1,6 +1,7 @@
 ﻿@model Webshop.Models.EditProduct
 
 @{
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Add product";
 }
 @if (User.IsInRole("Admin") || User.IsInRole("Employee"))
@@ -23,11 +24,18 @@
 
             <p>
                 <em>Choose Category:</em>
-                @Html.DropDownList("CategoryName", (SelectList)ViewBag.Categories)
+                @*@Html.DropDownList("CategoryName", (SelectList)ViewBag.Categories)
                 or
                 Add a new Category:
                 @Html.TextBox("Newcategory")
-                <button class="add-category">Add Category</button>
+                <button class="add-category">Add Category</button>*@
+                @Html.LabelFor(x => x.Category.Name, "Category")
+                @Html.DropDownListFor(x => x.Category.CategoryId, new List<SelectListItem>())
+                or
+                Add a new Category:
+                @Html.TextBox("Newcategory")
+                <input type="button" id='addcategory' value="Add Category" />
+                <div class="product-added"></div>
             </p>
             <p class="add-price">
                 <em>Price:</em>
@@ -47,4 +55,8 @@
         </div>
         <input type="submit" value="Add Product" />
     }
+}
+
+@section Scripts {
+    <script src="@Url.Content("~/Scripts/categories.js")"></script>
 }
