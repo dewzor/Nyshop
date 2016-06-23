@@ -12,6 +12,7 @@ using Webshop.Models;
 
 namespace Webshop.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class FormController : Controller
     {
         private StoreManager _manage = new StoreManager();

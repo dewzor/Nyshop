@@ -71,10 +71,8 @@ namespace Webshop.Controllers
         [HttpPost]
         public JsonResult CategoryList()
         {
-            // normally, you pass a list obtained from ORM or ADO.NET DataTable or DataReader
             var categories =  _store.GetCategories();
             string json = new JavaScriptSerializer().Serialize(categories);
-            //return Json(new Dictionary<string, string>() { { "PH", "Philippines" }, { "CN", "China" }, { "CA", "Canada" }, { "JP", "Japan" } }.ToList());
             var result = Json(json, JsonRequestBehavior.AllowGet);
             return result;
         }
