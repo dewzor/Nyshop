@@ -9,7 +9,7 @@
 
 
 
-<div class="jumbotron">
+@*<div class="jumbotron">
 
     <h2>Join our mail list</h2>
     <p>- Get the latest news! - </p>
@@ -18,22 +18,24 @@
         <button type="button" class="btn btn-info">Send</button>
     </form>
 
-</div>
+</div>*@
 
 <div class="container feautured">
     <div class="row" id="products">
-        <h2>Feautured Products</h2>
-        <p id="date">Updated 2016-06-02</p>
+        @*<h2>Feautured Products</h2>
+        <p id="date">Updated 2016-06-02</p>*@
 
         @foreach(var product in Model) {
-        <div class="col-sm-4 col-md-4">
+        <div class="col-sm-3 col-md-3">
             <div class="thumbnail">
+                <a href="@Url.Action("Details", new {id = product.ProductId})">
                 <img src="@Url.Content(product.ImageUrl)" alt="@product.Name">
                 <div class="caption">
                     <h3>@product.Name</h3>
-                    <p>@product.Description</p>
-                    <p><a href="@Url.Action("Details", new {id = product.ProductId})" class="btn btn-danger center-block" role="button"><span class="glyphicon glyphicon-shopping-cart"></span> Buy</a></p>
+                    <p>@product.Price</p>
+
                 </div>
+                    </a>
             </div>
         </div>
         }

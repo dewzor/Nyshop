@@ -10,7 +10,7 @@ namespace Webshop.Controllers
 {
     public class ReviewController : Controller
     {
-        //// GET api/wall
+        //// GET api/review
         //[HttpGet]
         //public IEnumerable<Review> Get(string id) // Hämtar alla wallposts som är skrivna på "id"s wall.
         //{

@@ -10,8 +10,20 @@
 }
 
 navbar{
-    margin-top: 200px;
-    padding-top: 200px;
+
+}
+
+.navbar-container {
+    background-color: #000;
+    width: 100%;
+    height: 80px;
+    margin-top: -20px;
+    
+}
+
+.navbar-container ul {
+    margin-right: 100px;
+    
 }
 
 .nav-header .navbar-brand#logo {
@@ -20,10 +32,19 @@ navbar{
 
 .navbar-nav li a {
  line-height: 50px;
+    font-size: 17px;
+    font-weight:normal;
+    color: #fff !important;
+    margin-top: 13px;
 }
 
-ul.nav a:hover { color: #000 !important; }
+ul.nav a:hover { color: #9d9d9d !important; }
 
+.container .row .thumbnail {
+    padding: 0px !important;
+    border: 0px !important;
+    text-align: center;
+}
 #footer {
     background-color: #2D2D2D;
     height: auto;
@@ -157,8 +178,8 @@ body, hr.fancy-line:after {
 }
 
 #products img{
-    width: 100%;
-    height: 300px;
+    width: 265px;
+    height: 265px;
 }
 
 
