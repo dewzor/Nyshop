@@ -28,9 +28,27 @@
     </p>
     @if (User.IsInRole("Admin") || User.IsInRole("Employee"))
     {
-    <p>
-        @Html.ActionLink("Edit product", "EditProduct", new { controller = "Admin", id = Model.ProductId })
-     </p>
-        }
-   
+        <p>
+            @Html.ActionLink("Edit product", "EditProduct", new {controller = "Admin", id = Model.ProductId})
+        </p>
+    }
+    @Html.Partial(ReviewProduct)
+    <div class="reviews">
+        
+    </div>
+
 </div>
+<script type="text/javascript">
+    var url = '/api/review/'+@Model.ProductId;
+    $(document).ready(function() {
+        $.getJSON(url).done(function(data) {
+            $.each(data, function(key, post) {
+                $('<li>', { text: insertitem(post) }, '</li>').appendTo($('.reviews'));
+            });
+        });
+    });
+
+    function insertitem(post) {
+        return post.CustomerId + ": " + post.Comment;
+    }
+</script>
