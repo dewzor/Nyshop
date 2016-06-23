@@ -1,0 +1,50 @@
+﻿@model Webshop.Models.EditProduct
+
+@{
+    ViewBag.Title = "Add product";
+}
+@if (User.IsInRole("Admin") || User.IsInRole("Employee"))
+{
+    <h2>
+        Add product
+    </h2>
+
+    using (Html.BeginForm("AddProduct", "Form", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="add-product">
+            <p>
+                <input type="file" name="ProductImage" id="ProductImage"/>
+                @*<input type="submit" value="UploadImg" />*@
+            </p>
+            <p class="add-productname">
+                <em>Product Name:</em>
+                @Html.TextBox("Name")
+            </p>
+
+            <p>
+                <em>Choose Category:</em>
+                @Html.DropDownList("CategoryName", (SelectList)ViewBag.Categories)
+                or
+                Add a new Category:
+                @Html.TextBox("Newcategory")
+                <button class="add-category">Add Category</button>
+            </p>
+            <p class="add-price">
+                <em>Price:</em>
+                @Html.TextBox("Price")
+            </p>
+            <p class="add-description">
+                <em>Description:</em>
+                @Html.TextArea("Description")
+            </p>
+            <p>
+                <em>Show product in webstore:</em>
+                @Html.CheckBox("Published")
+            </p>
+            @Html.HiddenFor(model => model.ProductId)
+
+
+        </div>
+        <input type="submit" value="Add Product" />
+    }
+}

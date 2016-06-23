@@ -15,6 +15,6 @@ namespace Webshop.Models
         public string Description { get; set; }
         public bool Published { get; set; }
         public string CategoryName { get; set; } //Might not really be needed but its a workaround for now to get EditProduct form working.
-        public HttpPostedFileBase ProfileImage { get; set; }
+        public HttpPostedFileBase ProductImage { get; set; }
     }
 }

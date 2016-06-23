@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNet.Identity
+
+@Html.TextArea("Comment")
+@Html.TextBox("Rating")
+
+<input type="submit" value="Review" id="sendreview" />
+
+
+
+<script type="text/javascript">
+    $(function (){
+        $('#sendreview').click(function (){
+            var text = $("#Comment").val()
+            var userid =@HttpContext.Current.User.Identity.GetUserId();
+            var productitem = @Model.ProductId;
+            var review = {'post' : text, 'customerid': userid, 'productid': productitem };
+
+            $.ajax({
+                url: "/api/wall",
+                type: "POST",
+                data: JSON.stringify(review),
+                dataType: 'json',
+                contentType: "application/json; charset=utf-8",
+                success: function (data) { location.reload(); },
+                error: function () { alert("error"); }
+            });
+        });
+    });
+</script>

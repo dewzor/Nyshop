@@ -11,8 +11,11 @@ namespace Webshop.Data
     
     public class StoreContext : IdentityDbContext<ApplicationUser> //DbContext
     {
-        
-        public StoreContext() : base("Webshop") { }
+
+        public StoreContext() : base("Webshop")
+        {
+            this.Configuration.AutoDetectChangesEnabled = false;
+        }
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }

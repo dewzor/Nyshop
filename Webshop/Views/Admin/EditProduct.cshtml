@@ -1,6 +1,7 @@
 ﻿@model Webshop.Models.EditProduct
 
 @{
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = Model.Name + " Details";
 }
 @if (User.IsInRole("Admin") || User.IsInRole("Employee"))
@@ -11,15 +12,15 @@
     using (Html.BeginForm("UploadImg", "Form", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         <p>
-            <img alt="@Model.Name" src="@Url.Content(Model.ImageUrl)"/>
-            <input type="file" name="ProfileImage" id="ProfileImage"/>
-            @*@Html.HiddenFor(model => model.Name)
-            @Html.HiddenFor(model => model.ProductId)*@
+            <img class="product-image" alt="@Model.Name" src="@Url.Content(Model.ImageUrl)"/>
+            <input type="file" name="ProductImage" id="ProductImage"/>
+            @Html.HiddenFor(model => model.Name)
+            @Html.HiddenFor(model => model.ProductId)
             <input type="submit" value="UploadImg"/>
         </p>
     }
 
-    using (Html.BeginForm("EditProduct", "Form", FormMethod.Post))
+    using (Html.BeginForm("EditProduct", "Form", FormMethod.Post, new { id= "submitForm"}))
     {
      <div class="edit-product">
          <p class="edit-productname">
@@ -29,13 +30,17 @@
 
          <p>
              <em>Choose Category:</em>
+             @*@Html.DropDownListFor(m => m.Category.CategoryId, (IEnumerable<SelectListItem>)ViewBag.Categories) <-- I used this one before JSON*@
+
              @*@Html.DropDownListFor(model => model.Category, new SelectList(ViewBag.Categories))*@
-             @*@Html.DropDownListFor(model => model.Category, new SelectList(ViewBag.Categories, "CategoryId", "Name"))*@
-             @Html.DropDownList("CategoryName", (SelectList)ViewBag.Categories)
+             @*@Html.DropDownList("CategoryName", (SelectList)ViewBag.Categories)*@
+             @Html.LabelFor(x => x.Category.Name, "Category")
+             @Html.DropDownListFor(x => x.Category.CategoryId, new List<SelectListItem>())
              or
              Add a new Category:
              @Html.TextBox("Newcategory")
-             <button class="add-category">Add Category</button>
+             <input type="button" id='addcategory' value="Add Category"/>
+             <div class="product-added"></div>
          </p>
          <p class="edit-price">
              <em>Price:</em>
@@ -49,12 +54,62 @@
              <em>Show product in webstore:</em>
              @Html.CheckBoxFor(model => model.Published, new {name = "Published"})
          </p>
-         <p class="button">
-             @Html.ActionLink("Add to cart", "AddtoCart", new {controller = "ShoppingCart", id = Model.ProductId})
-         </p>
+         @Html.HiddenFor(model => model.ProductId)
 
 
      </div>
-     <input type="submit" value="Update Product"/>
- }
+     <input type="submit" value="Submit"/>
+    }
 }
+@section Scripts {
+    <script src="@Url.Content("~/Scripts/categories.js")"></script>
+}
+
+@*<script type="text/javascript">
+
+    $(document).ready(function() {
+        alert("BAIZ");
+    });
+
+
+    //function getCategories() {
+    //    $.ajax({
+    //        url: '/Admin/CategoryList/',
+    //        type: 'POST',
+    //        dataType: 'json',
+    //        success: function(data) {
+    //            alert('success');
+    //            var categories = $('#Category_CategoryId');
+
+    //            $.each(JSON.parse(data), function(idx, obj) {
+    //                categories.append($('<option />').val(this.CategoryId).text(this.Name));
+    //                alert(this.Name+" "+this.CategoryId);
+    //            });
+    //        }
+    //    });
+    //};
+
+    
+
+    //$('#addcategory').click(function () {
+    //    alert($("#Newcategory").val());
+    //    var text = $("#Newcategory").val();
+    //    var data = { JSON.stringify(text), };
+    //    $.ajax({
+    //        type: 'post',
+    //        dataType: 'json',
+    //        url: 'Admin\AddCategory',
+    //        data: data,
+    //         contentType: 'application/json', <-- no need this.
+    //        success function(json) {
+    //            if (json) {
+    //                alert('ok');
+    //            } else {
+    //                alert('failed');
+    //            }
+    //        },
+    //    });
+
+    //    $.post("/Journal/SaveEntry", { jsonData: JSONstring });
+    //});
+</script>*@
