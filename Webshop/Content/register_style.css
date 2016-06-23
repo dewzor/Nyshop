@@ -1,0 +1,10 @@
+﻿input[type="text"]{
+    background-color: #fff;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    height: 2000px;
+}
