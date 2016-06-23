@@ -51,7 +51,7 @@ namespace Webshop.Controllers
             var showcategories = await _store.GetCategoriesWithProductsAsync();
 
 
-            return View(showcategories);
+            return View(categories);
         }
 
 

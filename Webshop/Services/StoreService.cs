@@ -59,7 +59,7 @@ namespace Webshop.Services
             return await _db.Products.OrderBy(c => c.Name).ToArrayAsync(); ;
         }
 
-        public async Task<IEnumerable<Category>> GetCategoriesWithProductsAsync()
+        public async Task<IEnumerable<Category>> GetCategoriesWithProductsAsync() // Needs work, couldnt get it to work properly.
         {
             var products = await _db.Products.OrderBy(c => c.Name).ToArrayAsync();
             var prodlist = new HashSet<int>(products.Select(x => x.Category.CategoryId));
@@ -69,9 +69,10 @@ namespace Webshop.Services
             var categorylist = from c in _db.Categories
                 join p in _db.Products on c.CategoryId equals p.Category.CategoryId
                 select c;
-            var result = await categorylist.OrderBy(c => c.Name).ToArrayAsync();
+            var result = await categorylist.OrderBy(c => c.Name).GroupBy(c => c.Name).Select(c => c.FirstOrDefault())
+                .ToArrayAsync();
                 //_db.Categories.OrderBy(c => c.Name).Where(c => prodlist.Contains(c.CategoryId)).ToList();
-            return result;
+            return categorylist;
         }
 
     }

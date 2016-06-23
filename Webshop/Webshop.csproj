@@ -267,7 +267,6 @@
     <Content Include="Content\index_style.css" />
     <Content Include="Content\sample.png" />
     <Content Include="Content\thumbnail-gallery.css" />
-    <Content Include="DBSCRIPT.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -382,7 +381,6 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Employee.cshtml" />
     <Content Include="Views\Admin\AddProduct.cshtml" />
-    <Content Include="Webshop.bak" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
