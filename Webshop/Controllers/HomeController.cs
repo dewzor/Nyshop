@@ -38,10 +38,10 @@ namespace Webshop.Controllers
 
 
 
-        // GET: REDIRECTEN
+        //GET: REDIRECTEN
         //public async Task<ActionResult> Index()
         //{
-        //    //await DbPopulate.AddDataAsync();
+        //    await DbPopulate.AddDataAsync();
         //    return Redirect("Store/Index");
         //}
     }

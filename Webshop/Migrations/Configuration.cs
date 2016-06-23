@@ -31,16 +31,16 @@ namespace Webshop.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-            
-            //context.Roles.AddOrUpdate(r => r.Name, 
-            //    new IdentityRole { Name = "Admin"},
+
+            //context.Roles.AddOrUpdate(r => r.Name,
+            //    new IdentityRole { Name = "Admin" },
             //    new IdentityRole { Name = "Employee" },
             //    new IdentityRole { Name = "Customer" }
             //    );
 
             //Adds Admin status to specified user.
             //var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-            //UserManager.AddToRole("6ad6fcb8-106a-46dc-b5f2-afa6d966d0f8", "Admin");
+            //UserManager.AddToRole("37c8d7c8-2732-458c-a667-329b0f8bc935", "Admin");
         }
     }
 }
