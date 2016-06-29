@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
+using System.Web.Http;
 using Webshop.Data;
 using Webshop.Models;
 
 namespace Webshop.Controllers
 {
-    public class ReviewController : Controller
+    public class ReviewController : ApiController
     {
         //// GET api/review
         //[HttpGet]
@@ -46,8 +46,10 @@ namespace Webshop.Controllers
                 newreview.CustomerId = post.CustomerId;
                 //newreview.ProductId = Convert.ToInt32(post.productidstring); // PID är id för användaren vars wall posten postas till.
                 //newreview.FID = Convert.ToInt32(post.authoridstring); // Friendid som postar posten.
+                newreview.Time = DateTime.Now;
                 if (post.Comment.Length < 1000)
                     newreview.Comment = post.Comment;  // ..
+                
                 try
                 {
                     //context.Review.Add(newreview);

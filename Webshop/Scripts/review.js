@@ -11,7 +11,10 @@
         dataType: 'json',
         contentType: "application/json; charset=utf-8",
         success: function (data) { location.reload(); },
-        error: function () { alert("error"); }
+        error: function(xhr, status, error) {
+            var err = eval("(" + xhr.responseText + ")");
+            alert("ERROR:"+err.Message);
+        }
     });
 });
 
