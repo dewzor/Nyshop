@@ -41,6 +41,9 @@ namespace Webshop.Controllers
             var product = await _store.GetProductByIDAsync(id.Value);
             if (product == null)
                 return HttpNotFound();
+            int idd = id.GetValueOrDefault();
+            var reviews = _store.getReviews(idd);
+            ViewBag.Reviews = reviews;
             return View(product);
         }
 

@@ -252,6 +252,10 @@
     <Compile Include="Migrations\201606151129444_EditProductModel.Designer.cs">
       <DependentUpon>201606151129444_EditProductModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606291139484_reviews.cs" />
+    <Compile Include="Migrations\201606291139484_reviews.Designer.cs">
+      <DependentUpon>201606291139484_reviews.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CartItem.cs" />
@@ -427,6 +431,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606151129444_EditProductModel.resx">
       <DependentUpon>201606151129444_EditProductModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606291139484_reviews.resx">
+      <DependentUpon>201606291139484_reviews.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -75,5 +75,21 @@ namespace Webshop.Services
             return categorylist;
         }
 
+        public List<Review> getReviews(int id)
+        {
+            using (var context = new StoreContext())
+            {
+                List<Review> reviewlist = new List<Review>();
+                var reviews = (from a in context.Reviews
+                               where (a.ProductId == id)
+                               select a);
+                foreach (var review in reviews)
+                {
+                    reviewlist.Add(review);
+                }
+                return reviewlist;
+            }
+        }
+
     }
 }
