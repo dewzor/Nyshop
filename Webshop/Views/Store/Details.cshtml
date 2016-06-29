@@ -37,6 +37,13 @@
     <div class="reviews">
 
     </div>
+
+    @if (ViewBag.Reviews != null)
+    {
+        foreach(var review in ViewBag.Reviews) {
+            <p> @review.CustomerId @review.Comment @review.Time @review.Rating </p>
+        }
+    }
     @if (User.IsInRole("Customer") || User.IsInRole("Admin"))
     {
         @Html.TextArea("Comment")
@@ -47,7 +54,6 @@
 </div>
 
     @section Scripts {
-        @*<script src="@Url.Content("~/Scripts/review.js")"></script>*@
     <script type="text/javascript">
         $('#sendreview').click(function() {
             var text = $("#Comment").val();
