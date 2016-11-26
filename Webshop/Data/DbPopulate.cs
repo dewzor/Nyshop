@@ -26,49 +26,57 @@ namespace Webshop.Data
                 db.Products.Add(new Models.Product
                 {
                     Category = computers,
-                    Name = "Really Fast Computer"
+                    Name = "Really Fast Computer",
+                    ImageUrl = "~/Images/leaves.jpg"
                 });
 
                 db.Products.Add(new Models.Product
                 {
                     Category = computers,
-                    Name = "Mainstream Computer"
+                    Name = "Mainstream Computer",
+                    ImageUrl = "~/Images/leaves.jpg"
                 });
 
                 db.Products.Add(new Models.Product
                 {
                     Category = printers,
-                    Name = "Fast Color Laser Printer"
+                    Name = "Fast Color Laser Printer",
+                    ImageUrl = "~/Images/leaves.jpg"
                 });
 
                 db.Products.Add(new Models.Product
                 {
                     Category = printers,
-                    Name = "Normal Ink Jet Printer"
+                    Name = "Normal Ink Jet Printer",
+                    ImageUrl = "~/Images/leaves.jpg"
                 });
 
                 db.Products.Add(new Models.Product
                 {
                     Category = printers,
-                    Name = "Dot Matrix Printer"
+                    Name = "Dot Matrix Printer",
+                    ImageUrl = "~/Images/leaves.jpg"
                 });
 
                 db.Products.Add(new Models.Product
                 {
                     Category = books,
-                    Name = "Really Interesting Book"
+                    Name = "Really Interesting Book",
+                    ImageUrl = "~/Images/leaves.jpg"
                 });
 
                 db.Products.Add(new Models.Product
                 {
                     Category = books,
-                    Name = "Boring Book You Have to Read"
+                    Name = "Boring Book You Have to Read",
+                    ImageUrl = "~/Images/leaves.jpg"
                 });
 
                 db.Products.Add(new Models.Product
                 {
                     Category = books,
-                    Name = "One of My Books"
+                    Name = "One of My Books",
+                    ImageUrl = "~/Images/leaves.jpg"
                 });
 
                 await db.SaveChangesAsync();
