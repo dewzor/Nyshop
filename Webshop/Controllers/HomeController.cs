@@ -12,6 +12,7 @@ namespace Webshop.Controllers
     {
         public ActionResult Index()
         {
+            Data.DbPopulate.AddDataAsync();
             return View();
         }
 

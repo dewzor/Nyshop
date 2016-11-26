@@ -14,6 +14,9 @@ namespace Webshop.Data
             using (var db = new StoreContext())
             {
 
+                if (db.Categories.Any())
+                    return;
+
                 var computers = new Category { Name = "Computers" };
                 var printers = new Category { Name = "Printers" };
                 var books = new Category { Name = "Books" };
